@@ -9,7 +9,7 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoryComponent implements OnInit {
   categories: Category[] = [];
-  currentCategory: Category;
+  currentCategory: Category | null;
   router: any;
   constructor(private categoryService: CategoryService) {}
 
@@ -39,5 +39,8 @@ export class CategoryComponent implements OnInit {
       return 'list-group-item';
     }
   } 
+  clearCurrentCategory(){
+    this.currentCategory=null;
+  }
   
 }
